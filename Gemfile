@@ -13,9 +13,9 @@ gem 'pg', :group => [:production]
 group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier', '>= 1.0.3'
-  gem 'zurb-foundation'
 end
 
+gem 'zurb-foundation'
 gem 'sass-rails', '>=3.1.0.rc.4'
 
 gem 'jquery-rails'
