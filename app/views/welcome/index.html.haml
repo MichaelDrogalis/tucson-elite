@@ -8,9 +8,12 @@
     .panel
       %h3 Upcoming races
       %ul
-        %li Boston marathon, April 16th
-        %li Tucson 5k, May 25th
-        %li Run for the Cure 5k, June 1st
+        = link_to "#" do
+          %li Boston marathon, April 16th
+        = link_to "#" do
+          %li Tucson 5k, May 25th
+        = link_to "#" do
+          %li Run for the Cure 5k, June 1st
       %h3 Recent articles
       %ul
         = link_to "#" do
@@ -21,16 +24,13 @@
           %li Article By Some Other Guy About Things We Like
 
 .row.sponsors-logos#sponsors
-  .six.columns.sponsor-logo
-    = image_tag "pike-logo.png"
-  .six.columns.sponsor-logo
-    = image_tag "performance-logo.png"
-
-.row.sponsor-descriptns
   .six.columns
-    .panel
+    .panel.sponsor
+      .sponsor-logo
+        = image_tag "pike-logo.png"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis augue, id elementum orci. Nunc eget nulla a urna posuere blandit et quis justo. Phasellus venenatis lectus vel lacus auctor feugiat. Nullam fringilla lorem id ante elementum a fringilla felis bibendum. Maecenas eu justo odio, at fringilla turpis. Suspendisse dignissim elit vitae magna molestie ultrices non nec neque. Nam quis egestas mauris. Donec ac egestas nunc. Etiam cursus elit odio. Quisque facilisis massa ultricies quam rutrum sit amet hendrerit odio consectetur. In dictum condimentum placerat. Cras lacinia nisi a turpis pretium eget facilisis justo sagittis. Ut augue turpis, pellentesque ac tempor at, pellentesque nec urna.
-
   .six.columns
-    .panel
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis augue, id elementum orci. Nunc eget nulla a urna posuere blandit et quis justo. Phasellus venenatis lectus vel lacus auctor feugiat. Nullam fringilla lorem id ante elementum a fringilla felis bibendum. Maecenas eu justo odio, at fringilla turpis. Suspendisse dignissim elit vitae magna molestie ultrices non nec neque. Nam quis egestas mauris. Donec ac egestas nunc. Etiam cursus elit odio. Quisque facilisis massa ultricies quam rutrum sit amet hendrerit odio consectetur. In dictum condimentum placerat. Cras lacinia nisi a turpis pretium eget facilisis justo sagittis. Ut augue turpis, pellentesque ac tempor at, pellentesque nec urna.
+    .panel.sponsor
+      .sponsor-logo
+        = image_tag "performance-logo.png"
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis augue, id elementum orci. Nunc eget nulla a urna posuere blandit et quis justo. Phasellus venenatis lectus vel lacus auctor feugiat. Nullam fringilla lorem id ante elementum a fringilla felis bibendum. Maecenas eu justo odio, at fringilla turpis. Suspendisse dignissim elit vitae magna molestie ultrices non nec neque. Nam quis egestas mauris. Donec ac egestas nunc. Etiam cursus elit odio. Quisque facilisis massa ultricies quam rutrum sit amet hendrerit odio consectetur. In dictum condimentum placerat. Cras lacinia nisi a turpis pretium eget facilisis justo sagittis. Ut augue turpis, pellentesque ac tempor at, pellentesque nec urna. 
