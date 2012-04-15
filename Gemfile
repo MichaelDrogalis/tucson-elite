@@ -16,7 +16,7 @@ group :assets do
 end
 
 gem 'zurb-foundation'
-gem 'sass-rails', '>=3.1.0.rc.4'
+gem 'sass-rails', '3.1.4'
 
 gem 'jquery-rails'
 
