@@ -37,4 +37,13 @@
           = link_to "Splotlight", "#", { :class => "nav-link" }
         .two.columns 
           = link_to "Our Lovely Sponsors", "#", { :class => "big radius nice button", :onclick => "goToByScroll('sponsors')" }
+
     = yield
+    
+    .row
+      .twelve.columns
+        .panel#developer
+          %p Developed by Michael Drogalis (mjd3089 at rit dot edu)
+          %p A Ruby on Rails project
+          %p
+            = image_tag "rails.png"
