@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  $("#featured").orbit();
+    $("#featured").orbit({
+        bullets: true,
+        pauseOnHover: true
+    });
 });
