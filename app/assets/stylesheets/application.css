@@ -8,7 +8,7 @@
 */
 
 body {
-  background: url(background-texture.png);
+  background: url(/assets/background-texture.png);
 }
 
 #developer {
