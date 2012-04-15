@@ -8,3 +8,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+
+function goToByScroll(id) {
+    $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+}
