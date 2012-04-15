@@ -26,17 +26,16 @@
     .row.navigation-area
       .six.columns
         = image_tag "logo.png"
-      .navigation-links
-        .two.columns
-          = link_to "Blog", "#", { :class => "nav-link" }
-          = link_to "Videos", "#", { :class => "nav-link" }
-          = link_to "Workouts", "#", { :class => "nav-link" }
-        .two.columns
-          = link_to "Mission", "#", { :class => "nav-link" }
-          = link_to "Coaches", "#", { :class => "nav-link" }
-          = link_to "Splotlight", "#", { :class => "nav-link" }
-        .two.columns 
-          = link_to "Our Lovely Sponsors", "#", { :class => "big radius nice button", :onclick => "goToByScroll('sponsors')" }
+      .two.columns
+        = link_to "Blog", "#", { :class => "nav-link" }
+        = link_to "Videos", "#", { :class => "nav-link" }
+        = link_to "Workouts", "#", { :class => "nav-link" }
+      .two.columns
+        = link_to "Mission", "#", { :class => "nav-link" }
+        = link_to "Coaches", "#", { :class => "nav-link" }
+        = link_to "Splotlight", "#", { :class => "nav-link" }
+      .two.columns
+        = link_to "Our Lovely Sponsors", "#", { :class => "big radius nice button", :onclick => "goToByScroll('sponsors')" }
 
     = yield
     
