@@ -2,14 +2,12 @@
   .twelve.columns
     .panel
       %h2 Sign in
-      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-        %div
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "nice" }) do |f|
+        %div.form-field
           = f.label :email
-          %br/
           = f.email_field :email
-        %div
+        %div.form-field
           = f.label :password
-          %br/
           = f.password_field :password
         - if devise_mapping.rememberable?
           %div

@@ -1,6 +1,8 @@
 - if notice or alert
   .row
-    %p.notice
-      = notice
-    .alert-box.error
-      = alert 
+    - if notice
+      .alert-box.success
+        = notice
+    - if alert
+      .alert-box.error
+        = alert 
