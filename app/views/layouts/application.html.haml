@@ -35,7 +35,8 @@
         = link_to "Coaches", "#", { :class => "nav-link" }
         = link_to "Splotlight", "#", { :class => "nav-link" }
       .two.columns.nav-links
-        = link_to "Show our sponsors some love!", "#", { :class => "medium radius nice button", :id => "sponsor-love", :onclick => "goToByScroll('sponsors')" }
+        - if request.env['PATH_INFO'] == root_path
+          = link_to "Show our sponsors some love!", "#", { :class => "medium radius nice button", :id => "sponsor-love", :onclick => "goToByScroll('sponsors')" }
 
     = render "layouts/actions"
     = render "layouts/feedback"
