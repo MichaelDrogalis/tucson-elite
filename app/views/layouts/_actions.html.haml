@@ -1,5 +1,9 @@
 - if user_signed_in?
   .row
-    .alert-box.warning
-      = link_to "Edit Account", edit_user_registration_path
-      = link_to "Sign out", destroy_user_session_path, :method => :delete
+    .alert-box.warning#user-actions
+      %dl.sub-nav
+        %dt User actions:
+        %dd
+          = link_to "Edit Account", edit_user_registration_path
+        %dd
+          = link_to "Sign out", destroy_user_session_path, :method => :delete
