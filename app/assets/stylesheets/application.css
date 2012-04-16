@@ -22,3 +22,10 @@ body {
 .nav-links {
   margin-top: 15px;
 }
+
+#sponsor-love {
+  font-size: 21px;
+  height: 98px;
+  line-height: 1.25;
+  padding: 9px;
+}
