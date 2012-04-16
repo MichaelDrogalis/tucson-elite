@@ -37,6 +37,8 @@
       .two.columns.nav-links
         = link_to "Show our sponsors some love!", "#", { :class => "medium radius nice button", :id => "sponsor-love", :onclick => "goToByScroll('sponsors')" }
 
+    = render "layouts/feedback"
+    
     = yield
     
     .row
