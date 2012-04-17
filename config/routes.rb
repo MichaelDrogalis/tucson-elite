@@ -1,9 +1,8 @@
 TucsonElite::Application.routes.draw do
-  get "coaches/index"
-
   devise_for :users
 
   get "welcome/index"
+  get "coaches" => "coaches#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
