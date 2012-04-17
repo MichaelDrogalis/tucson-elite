@@ -1,4 +1,6 @@
 TucsonElite::Application.routes.draw do
+  get "coaches/index"
+
   devise_for :users
 
   get "welcome/index"
