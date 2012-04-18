@@ -42,9 +42,10 @@
     
     = yield
     
-    .row
+    .row 
       .twelve.columns
         .panel#developer
-          %p Developed by Michael Drogalis (mjd3089 at rit dot edu)
-          %p A Ruby on Rails project
+          .sponsor-logo
+            = image_tag asset_path("pike-logo.png")
+          %p Developed by Michael Drogalis (mjd3089 at rit dot edu) | A Ruby on Rails project 
           = link_to "Administrators log in here.", new_user_session_path
