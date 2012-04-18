@@ -4,4 +4,6 @@ $(document).ready(function() {
         bullets: true,
         pauseOnHover: true
     });
+
+    $(".sponsor-wrapper").equalHeights();
 });
