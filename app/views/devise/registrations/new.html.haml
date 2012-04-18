@@ -13,5 +13,6 @@
         %div.form-field
           = f.label :password_confirmation
           = f.password_field :password_confirmation
-        %div= f.submit "Sign up"
+        %p
+          %div= f.submit "Sign up", { :class => "nice radius button" }
       = render "links"
