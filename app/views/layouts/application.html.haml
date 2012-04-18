@@ -30,7 +30,7 @@
       .two.columns.nav-links
         = link_to "Blog", "#", { :class => "nav-link" }
         = link_to "Videos", "#", { :class => "nav-link" }
-        = link_to "Workouts", "#", { :class => "nav-link" }
+        = link_to "Workouts", workouts_path, { :class => "nav-link" }
       .two.columns.nav-links
         = link_to "Mission", "#", { :class => "nav-link" }
         = link_to "Coaches", coaches_path, { :class => "nav-link" }
@@ -49,3 +49,4 @@
         .panel#developer
           %p Developed by Michael Drogalis (mjd3089 at rit dot edu)
           %p A Ruby on Rails project
+          = link_to "Administrators log in here.", new_user_session_path
