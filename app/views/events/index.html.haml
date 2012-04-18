@@ -10,7 +10,6 @@
         %tr
           %th Name
           %th Event when
-          %th Description
           %th
           %th
           %th
@@ -19,7 +18,6 @@
           %tr
             %td= event.name
             %td= event.event_when
-            %td= event.description
             %td= link_to 'Show', event
             %td= link_to 'Edit', edit_event_path(event)
             %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
