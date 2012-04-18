@@ -34,7 +34,7 @@
       .two.columns.nav-links
         = link_to "Blog", "#", { :class => "nav-link" }
         = link_to "Videos", "#", { :class => "nav-link" }
-        = link_to "Events", "#", { :class => "nav-link" }
+        = link_to "Events", events_path, { :class => "nav-link" }
       .two.columns
 
     = render "layouts/actions"
