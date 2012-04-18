@@ -11,6 +11,10 @@ class EventsController < ApplicationController
       format.json { render json: @events }
     end
   end
+  
+  def listing
+    @events = Event.all
+  end
 
   # GET /events/1
   # GET /events/1.json
