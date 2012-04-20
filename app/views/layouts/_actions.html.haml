@@ -4,6 +4,10 @@
       %dl.sub-nav
         %dt Things you can do:
         %dd
+          = link_to "Manage Blog", posts_listing_path
+        %dd
+          = link_to "Manage Events", events_listing_path
+        %dd
           = link_to "Edit My Account", edit_user_registration_path
         %dd
           = link_to "Sign out", destroy_user_session_path, :method => :delete

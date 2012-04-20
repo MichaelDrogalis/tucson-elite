@@ -1,0 +1,11 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Edit This Event
+.row
+  .twelve.columns
+    .panel
+      = render 'form'
+      = link_to 'Show', @event
+      \|
+      = link_to 'Back', events_path

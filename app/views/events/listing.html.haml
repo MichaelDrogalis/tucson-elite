@@ -1,0 +1,25 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Listing All Events
+
+.row
+  .twelve.columns
+    .panel
+      %table
+        %tr
+          %th Name
+          %th Event Date
+          %th
+          %th
+      
+        - @events.each do |event|
+          %tr
+            %td= event.name
+            %td= event.event_when
+            %td= link_to 'Edit', edit_event_path(event), :class => "small nice white radius button"
+            %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete, :class => "small nice red radius button"
+      
+      %br
+      
+      = link_to 'New Event', new_event_path, :class => "nice blue radius button"

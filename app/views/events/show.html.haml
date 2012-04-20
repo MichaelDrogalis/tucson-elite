@@ -1,0 +1,13 @@
+.row
+  .twelve.columns
+    .panel
+      %p
+        %b Name:
+        = @event.name
+      %p
+        %b Event when:
+        = @event.event_when
+      
+      = link_to 'Edit', edit_event_path(@event)
+      \|
+      = link_to 'Back', events_path
