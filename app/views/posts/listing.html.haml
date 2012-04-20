@@ -1,0 +1,25 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Listing posts
+  .twelve.columns
+    .panel
+      %table
+        %tr
+          %th Title
+          %th Content
+          %th User
+          %th
+          %th
+      
+        - @posts.each do |post|
+          %tr
+            %td= post.title
+            %td= post.content
+            %td= post.user.first_name
+            %td= link_to 'Edit', edit_post_path(post), :class => "small nice white radius button"
+            %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete, :class => "small nice red radius button"
+      
+      %br
+      
+      = link_to 'New Post', new_post_path, { :class => "nice blue radius button" }

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index, :show]
 
   # GET /posts
   # GET /posts.json
@@ -10,6 +10,10 @@ class PostsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @posts }
     end
+  end
+
+  def listing
+    @posts = Post.all
   end
 
   # GET /posts/1
