@@ -2,17 +2,12 @@
   .twelve.columns
     .panel
       %h2#page-title Listing posts
-  .twelve.columns
-    .panel
-      %table
-        %tr
-          %th Title
-          %th Content
-          %th User
-      
-        - @posts.each do |post|
-          %tr
-            %td= post.title
-            %td= post.content
-            %td= post.user.first_name
+
+
+- @posts.each do |post|
+  .row
+    .twelve.columns
+      .panel
+        %h4= post.title
+        = post.content
       
