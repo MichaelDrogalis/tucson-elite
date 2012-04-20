@@ -1,13 +1,13 @@
 .row
-  .twelve.columns
-    .panel
-      %p
-        %b Title:
-        = @post.title
-      %p
-        %b Content:
-        = @post.content
-      
-      = link_to 'Edit', edit_post_path(@post)
-      \|
-      = link_to 'Back', posts_path
+  .panel
+    .row
+      .twelve.columns
+        %h2= @post.title
+    .row
+      .twelve.columns
+        = format(@post.content)
+        
+        - if user_signed_in? 
+          = link_to 'Edit', edit_post_path(@post)
+          \|
+          = link_to 'Back', posts_path
