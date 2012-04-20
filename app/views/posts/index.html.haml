@@ -9,5 +9,9 @@
     .twelve.columns
       .panel
         %h4= post.title
-        = post.content
+        .small
+          = "by " + post.user.full_name + " on " + post.date
+        = truncate(post.content, :length => 400)
+        .full-article
+          = link_to "Full article", post_path(post)
       
