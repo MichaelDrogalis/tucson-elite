@@ -46,7 +46,6 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    params[:event][:event_when] = fix_date_formatted_for_post_gres params[:event][:event_when]
     @event = Event.new(params[:event])
 
     respond_to do |format|
@@ -63,7 +62,6 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.json
   def update
-    params[:event][:event_when] = fix_date_formatted_for_post_gres params[:event][:event_when]
     @event = Event.find(params[:id])
 
     respond_to do |format|
@@ -87,10 +85,5 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.json { head :ok }
     end
-  end
-
-  def fix_date_formatted_for_post_gres date
-    badly_formatted_date = Date.parse date
-    return badly_formatted_date.strftime("%d/%m/%Y")
   end
 end
