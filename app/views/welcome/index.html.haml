@@ -5,21 +5,11 @@
       = image_tag asset_path("nationals.png")
       = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/401978_354758111204787_321141644566434_1680787_1410265771_n.jpg"
   .six.columns
-    .row
-      .twelve.columns
-        .panel
-          %h4 Allan's Neat Article Title Here
-          In this article, Allan talks about how to roid up and drop 5 minutes off your 5k in a week. Don't miss out!
-          = link_to "read more", "#"
-    .row
-      .twelve.columns
-        .panel
-          %h4 Katherine's Article Goes Here Too
-          Here's another article talking about other things. I should probably be doing homework right now.
-          = link_to "read more", "#"
-    .row
-      .twelve.columns
-        .panel
-          %h4 More Article Titles
-          Running out of my own filler text to plop here. Must go find more Latin to place in these spots.
-          = link_to "read more", "#"
+    - @posts.each do |post|
+      .row
+        .twelve.columns
+          .panel
+            %h4= post.title
+            = truncate(post.content, :length => 135)
+            = link_to "Full article", post_path(post)
+
