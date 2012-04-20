@@ -1,7 +1,7 @@
 .row
   .twelve.columns
     .panel
-      = form_for @post do |f|
+      = form_for(@post, :html => { :class => "nice" }) do |f|
         -if @post.errors.any?
           #error_explanation
             %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
@@ -9,11 +9,11 @@
               - @post.errors.full_messages.each do |msg|
                 %li= msg
       
-        .field
+        .field.form-field
           = f.label :title
           = f.text_field :title
-        .field
+        .field.form-field
           = f.label :content
           = f.text_area :content
         .actions
-          = f.submit 'Save'
+          = f.submit 'Save', { :class => "nice green radius button" }
