@@ -9,7 +9,7 @@
       .row
         .twelve.columns
           .panel
-            %h4= post.title
+            %h4= truncate(post.title, :length => 80)
             = truncate(post.content, :length => 135)
             = link_to "Full article", post_path(post)
 
