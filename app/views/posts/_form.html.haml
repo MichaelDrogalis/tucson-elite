@@ -14,6 +14,6 @@
           = f.text_field :title
         .field.form-field
           = f.label :content
-          = f.text_area :content
+          = f.text_area :content, :id => "post-content-input"
         .actions
           = f.submit 'Save', { :class => "nice green radius button" }
