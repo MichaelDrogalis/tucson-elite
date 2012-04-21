@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
 
+@mixin shadowed-text
+  text-shadow: 0 1px 1px white, 0 3px 0 #B6BAB5
+
+.mini-title
+  @include shadowed-text
+
 .navigation-area
   margin-top: 20px
 
