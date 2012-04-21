@@ -1,4 +1,4 @@
 $(document).ready(function() {
-    $(".coach-half-section").equalHeights();
+    $(".coach-half-section").equalHeights(340);
 });
 
