@@ -4,7 +4,7 @@ $(document).ready(function() {
     
     postContentSelector.keyup(function() {
 	populatePreviewArea($(this));
-        //syncInputAndPreviewHeights();
+        syncInputAndPreviewHeights();
     });
 
     function populatePreviewArea(context) {
