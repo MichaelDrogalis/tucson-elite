@@ -1,9 +1,10 @@
 $(document).ready(function() {
     var postContentSelector = $("#post-content-input");
     populatePreviewArea(postContentSelector);
+    syncInputAndPreviewHeights();
     
     postContentSelector.keyup(function() {
-	populatePreviewArea($(this));
+        populatePreviewArea($(this));
         syncInputAndPreviewHeights();
     });
 
@@ -16,6 +17,7 @@ $(document).ready(function() {
     }
 
     function syncInputAndPreviewHeights() {
-	
+        var postPreview = $("#post-preview");
+        postContentSelector.height(postPreview.height());
     }
 });
