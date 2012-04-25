@@ -1,8 +1,8 @@
 .row
-  .panel.post-panel
+  .panel#post-container
     .row
       .twelve.columns
-        %h2.post-title= @post.title
+        %h2#post-title= @post.title
     .row
       .twelve.columns
         = format(@post.content)
