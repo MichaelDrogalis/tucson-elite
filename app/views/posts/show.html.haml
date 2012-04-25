@@ -6,6 +6,7 @@
     .row
       .twelve.columns
         = format(@post.content)
+        = tweet_button
         = facebook_like
         
         - if user_signed_in? 

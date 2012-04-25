@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include TweetButton
+  
   def format(text)
     sanitize(markdown(text))
   end

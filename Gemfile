@@ -28,6 +28,7 @@ gem 'rufus-scheduler'
 gem 'devise'
 
 gem 'bluecloth'
+gem 'tweet-button'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
