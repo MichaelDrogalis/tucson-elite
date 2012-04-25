@@ -42,6 +42,18 @@
     
     = yield
     
+    .row
+      .twelve.columns
+        .panel
+          #social-media
+            .row
+              .twelve.columns
+                %h3#social-media-title Be social with us!
+            .row
+              .twelve.columns
+                = link_to "http://www.facebook.com/pages/Tucson-Elite-Athletic-Club/321141644566434?ref=ts" do image_tag asset_path("facebook.png") end
+
+        
     .row 
       .twelve.columns
         .panel#developer
@@ -49,3 +61,4 @@
             = image_tag asset_path("pike-logo.png")
           %p Developed by Michael Drogalis (mjd3089 at rit dot edu) | A Ruby on Rails project 
           = link_to "Coach? Log in here!", new_user_session_path
+ 
