@@ -1,10 +1,9 @@
 TucsonElite::Application.routes.draw do
-  resources :videos
-
   devise_for :users
 
   resources :events
   resources :posts
+  resources :videos
 
   get "/welcome/index"
   get "/coaches" => "coaches#index", :as => :coaches
@@ -12,6 +11,7 @@ TucsonElite::Application.routes.draw do
 
   get "/events_admin" => "events#listing", :as => :events_listing
   get "/posts_admin" => "posts#listing", :as => :posts_listing
+  get "/videos_admin" => "videos#listing", :as => :videos_listing
   
   get "/blog" => "posts#index", :as => :blog
   

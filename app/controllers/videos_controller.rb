@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
+  
   # GET /videos
   # GET /videos.json
   def index
@@ -8,6 +10,10 @@ class VideosController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @videos }
     end
+  end
+
+  def listing
+    @videos = Video.all
   end
 
   # GET /videos/1

@@ -1,7 +1,10 @@
-%h1 Editing video
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Editing Video
+      
+      = render 'form'
+      = link_to 'Show', @video
+      \|
+      = link_to 'Back', videos_path
 
-= render 'form'
-
-= link_to 'Show', @video
-\|
-= link_to 'Back', videos_path
