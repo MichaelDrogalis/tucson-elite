@@ -1,9 +1,17 @@
 .row.homepage-content
   .six.columns
-    #featured
-      = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/421926_407082032639061_321141644566434_1841310_1782878540_n.jpg"
-      = image_tag asset_path("nationals.png")
-      = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/401978_354758111204787_321141644566434_1680787_1410265771_n.jpg"
+    .row
+      .twelve.columns
+        #featured
+          = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/421926_407082032639061_321141644566434_1841310_1782878540_n.jpg"
+          = image_tag asset_path("nationals.png")
+          = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/401978_354758111204787_321141644566434_1680787_1410265771_n.jpg"
+    .row#social-icons
+      .twelve.columns
+        = link_to "http://www.facebook.com/pages/Tucson-Elite-Athletic-Club/321141644566434?ref=ts" do image_tag asset_path("facebook.png"), { :class => "social-icon" } end
+        = image_tag asset_path("twitter.png"), { :class => "social-icon" }
+        = image_tag asset_path("youtube.png"), { :class => "social-icon" }
+
   .six.columns
     - @posts.each do |post|
       .row
@@ -12,9 +20,4 @@
             %h4= truncate(post.title, :length => 80)
             = Sanitize.clean(format(truncate(post.content, :length => 120)))
             = link_to "Full article", post_path(post)
-
-.row
-  .twelve.columns#social-icons
-    = link_to "http://www.facebook.com/pages/Tucson-Elite-Athletic-Club/321141644566434?ref=ts" do image_tag asset_path("facebook.png"), { :class => "social-icon" } end
-    = image_tag asset_path("twitter.png"), { :class => "social-icon" }
-    = image_tag asset_path("youtube.png"), { :class => "social-icon" }
+ 
