@@ -37,11 +37,12 @@
         = link_to "Events", events_path, { :class => "nav-link" }
       .two.columns
 
-    = render "layouts/actions"
-    = render "layouts/feedback"
+    #body-content
+      = render "layouts/actions"
+      = render "layouts/feedback"
     
-    = yield
-           
+      = yield
+              
     .row 
       .twelve.columns
         .panel#developer
