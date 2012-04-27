@@ -18,6 +18,6 @@
         .twelve.columns
           .panel
             %h4= truncate(post.title, :length => 80)
-            = Sanitize.clean(format(truncate(post.content, :length => 120)))
+            = Sanitize.clean(format(truncate(post.content, :length => 325)))
             = link_to "Full article", post_path(post)
  
