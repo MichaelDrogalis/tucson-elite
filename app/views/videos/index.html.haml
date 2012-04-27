@@ -1,0 +1,12 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title All Videos
+
+- @videos.each do |video|
+  .row
+    .twelve.columns
+      .panel
+        %h4= video.title
+        = video.youtube_url
+        = video.description
