@@ -13,3 +13,9 @@
             = Sanitize.clean(format(truncate(post.content, :length => 120)))
             = link_to "Full article", post_path(post)
 
+.row
+  .one.column
+  .eleven.columns#social-icons
+    = link_to "http://www.facebook.com/pages/Tucson-Elite-Athletic-Club/321141644566434?ref=ts" do image_tag asset_path("facebook.png"), { :class => "social-icon" } end
+    = image_tag asset_path("twitter.png"), { :class => "social-icon" }
+    = image_tag asset_path("youtube.png"), { :class => "social-icon" }
