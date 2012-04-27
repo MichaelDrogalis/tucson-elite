@@ -1,4 +1,6 @@
 TucsonElite::Application.routes.draw do
+  resources :videos
+
   devise_for :users
 
   resources :events
