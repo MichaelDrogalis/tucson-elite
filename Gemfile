@@ -18,6 +18,8 @@ end
 gem 'zurb-foundation'
 gem 'sass-rails', '3.1.4'
 
+gem 'friendly_id'
+
 gem 'jquery-rails'
 gem 'jquery_datepicker'
 
@@ -27,6 +29,7 @@ gem 'haml-rails'
 gem 'rufus-scheduler'
 gem 'devise'
 
+gem 'simple_form'
 gem 'bluecloth'
 gem 'sanitize'
 gem 'tweet-button'
