@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   def user
     User.find user_id
   end
