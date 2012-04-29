@@ -1,0 +1,22 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Listing All Post Comments
+  .twelve.columns
+    .panel
+      %table
+        %tr
+          %th Name
+          %th Email
+          %th Content
+          %th
+          %th
+      
+        - @comments.each do |comment|
+          %tr
+            %td= comment.name
+            %td= comment.email
+            %td= truncate(comment.content)
+            %td= # link_to 'Edit', edit_post_path(post), :class => "small nice white radius button"
+            %td= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete, :class => "small nice red radius button"
+      

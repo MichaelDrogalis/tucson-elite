@@ -1,5 +1,6 @@
 class PostCommentsController < ApplicationController
-
+  before_filter :authenticate_user!, :except => [:create]
+  
   def create
     @post_comment = PostComment.new(params[:post_comment])
 
@@ -12,6 +13,21 @@ class PostCommentsController < ApplicationController
         format.json { render json: @post_comment.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @comment = PostComment.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to post_comments_listing_path, :notice => "You deleted the comment. You show 'em who's boss!" }
+      format.json { head :ok }
+    end
+
+  end
+
+  def listing
+    @comments = PostComment.all
   end
 
 end
