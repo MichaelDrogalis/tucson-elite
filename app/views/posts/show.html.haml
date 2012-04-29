@@ -14,4 +14,16 @@
           \|
           = link_to 'Back', posts_path
 
+.row
+  .twelve.columns
+    .panel
+      %h4 Got something to say?
+      = simple_form_for PostComment.new do |f|
+        .input-field
+          = f.input_field :name, :placeholder => "Name"
+        .input-field
+          = f.input_field :email, :placeholder => "Email"
+        = f.input :content
+        = f.button :submit, { :class => "nice green radius" }
+
 #toTop ^ Back to Top

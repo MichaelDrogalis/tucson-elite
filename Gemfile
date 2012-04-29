@@ -29,6 +29,7 @@ gem 'haml-rails'
 gem 'rufus-scheduler'
 gem 'devise'
 
+gem 'simple_form'
 gem 'bluecloth'
 gem 'sanitize'
 gem 'tweet-button'

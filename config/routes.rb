@@ -3,6 +3,7 @@ TucsonElite::Application.routes.draw do
 
   resources :events
   resources :posts
+  resources :post_comments
   resources :videos
 
   get "/welcome/index"
