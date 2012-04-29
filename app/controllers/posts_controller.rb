@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = PostComment.new(:post_id => @post.id)
-    @post_comments = PostComment.where(:post_id => params[:id])
+    @post_comments = PostComment.where(:post_id => @post.id)
     @n_comments = @post_comments.count
 
     respond_to do |format|
