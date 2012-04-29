@@ -17,12 +17,15 @@
 .row
   .twelve.columns
     .panel
-      %h4 Got something to say?
-      = simple_form_for PostComment.new do |f|
-        .input-field
-          = f.input_field :name, :placeholder => "Name"
-        .input-field
-          = f.input_field :email, :placeholder => "Email"
+      %h4 0 comments
+      - @post_comments.each do |comment|
+        = comment.content
+      
+      %hr
+      = simple_form_for @comment do |f|
+        = f.hidden_field :post_id, :value => @post.id
+        = f.input :name
+        = f.input :email
         = f.input :content
         = f.button :submit, { :class => "nice green radius" }
 
