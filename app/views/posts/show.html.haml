@@ -17,7 +17,7 @@
 .row
   .twelve.columns
     .panel
-      %h4 0 comments
+      %h4= @n_comments.to_s + " comments"
       - @post_comments.each do |comment|
         = comment.content
       

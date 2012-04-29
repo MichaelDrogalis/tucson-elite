@@ -8,7 +8,7 @@ class PostCommentsController < ApplicationController
         format.html { redirect_to post_path(Post.find(@post_comment.post_id)), notice: 'Post comment was successfully created.' }
         format.json { render json: @post_comment, status: :created, location: @post_comment }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to post_path(Post.find(@post_comment.post_id)), alert: 'There was a problem. Your comment was not posted.' }
         format.json { render json: @post_comment.errors, status: :unprocessable_entity }
       end
     end
