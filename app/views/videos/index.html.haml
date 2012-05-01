@@ -1,12 +1,23 @@
 .row
   .twelve.columns
     .panel
-      %h2#page-title All Videos
+      %h2#page-title Videos
 
 - @videos.each do |video|
   .row
     .twelve.columns
       .panel
-        %h4= video.title
-        = video.youtube_url
-        = video.description
+        .row
+          .twelve.columns
+            %h4= video.title
+            .row
+              .four.columns
+                .youtube-video
+                  %object
+                    %param{:name => "movie", :value => "http://www.youtube.com/v/#{video.youtube_url}&hl=en"}
+                    %param{:name => "wmode", :value => "transparent"}
+                    %embed{:src => "http://www.youtube.com/v/#{video.youtube_url}&hl=en", :id => "youtube-player", :type => "application/x-shockwave-flash", :wmode => "transparent"}
+              .three.columns
+                = video.description
+              .five.columns
+ 
