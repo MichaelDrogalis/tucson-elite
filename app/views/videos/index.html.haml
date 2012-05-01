@@ -8,5 +8,11 @@
     .twelve.columns
       .panel
         %h4= video.title
-        = video.youtube_url
+
+        .youtube-video
+          %object
+            %param{:name => "movie", :value => "http://www.youtube.com/v/#{video.youtube_url}&hl=en"}
+            %param{:name => "wmode", :value => "transparent"}
+            %embed{:src => "http://www.youtube.com/v/#{video.youtube_url}&hl=en", :id => "youtube-player", :type => "application/x-shockwave-flash", :wmode => "transparent"}
+
         = video.description
