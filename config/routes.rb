@@ -3,6 +3,7 @@ TucsonElite::Application.routes.draw do
 
   resources :events
   resources :posts
+  resources :post_comments
   resources :videos
 
   get "/welcome/index"
@@ -11,6 +12,7 @@ TucsonElite::Application.routes.draw do
 
   get "/events_admin" => "events#listing", :as => :events_listing
   get "/posts_admin" => "posts#listing", :as => :posts_listing
+  get "/post_comments_admin" => "post_comments#listing", :as => :post_comments_listing
   get "/videos_admin" => "videos#listing", :as => :videos_listing
   
   get "/blog" => "posts#index", :as => :blog
