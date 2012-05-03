@@ -11,9 +11,12 @@
         %h3= tag.name
         
         - Video.tagged_with(tag.name).each do |video|
-          = video.youtube_url
-
-
+          .youtube-video
+            %object
+              %param{:name => "movie", :value => "http://www.youtube.com/v/#{video.youtube_url}&hl=en"}
+              %param{:name => "wmode", :value => "transparent"}
+              %embed{:src => "http://www.youtube.com/v/#{video.youtube_url}&hl=en", :id => "youtube-player", :type => "application/x-shockwave-flash", :wmode => "transparent"}
+        
 .dynacloud#dynatags
   - Video.tag_counts_on(:tags).each do |tag|
     = (tag.name + " ") * tag.count
