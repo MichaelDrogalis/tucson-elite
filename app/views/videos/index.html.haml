@@ -4,24 +4,16 @@
       %h2#page-title Browse Video Tags
       #dynacloud
       
-- @videos.each do |video|
-  .row
+- @video_tags.each do |tag|
+  .row{ :id => tag.name }
     .twelve.columns
       .panel
-        .row
-          .twelve.columns
-            %h4= video.title
-            .row
-              .four.columns
-                .youtube-video
-                  %object
-                    %param{:name => "movie", :value => "http://www.youtube.com/v/#{video.youtube_url}&hl=en"}
-                    %param{:name => "wmode", :value => "transparent"}
-                    %embed{:src => "http://www.youtube.com/v/#{video.youtube_url}&hl=en", :id => "youtube-player", :type => "application/x-shockwave-flash", :wmode => "transparent"}
-              .three.columns
-                = video.description
-              .five.columns
- 
+        %h3= tag.name
+        
+        - Video.tagged_with(tag.name).each do |video|
+          = video.youtube_url
+
+
 .dynacloud#dynatags
   - Video.tag_counts_on(:tags).each do |tag|
     = (tag.name + " ") * tag.count
