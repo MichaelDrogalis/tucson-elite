@@ -20,6 +20,9 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comment = PostComment.new(:post_id => @post.id)
+    @post_comments = PostComment.where(:post_id => @post.id)
+    @n_comments = @post_comments.count
 
     respond_to do |format|
       format.html # show.html.erb

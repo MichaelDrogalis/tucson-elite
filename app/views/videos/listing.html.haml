@@ -1,0 +1,25 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Listing All Videos
+  .twelve.columns
+    .panel
+      %table
+        %tr
+          %th Title
+          %th Youtube Identifier
+          %th Description
+          %th
+          %th
+      
+        - @videos.each do |video|
+          %tr
+            %td= video.title
+            %td= video.youtube_url
+            %td= truncate(video.description)
+            %td= link_to 'Edit', edit_video_path(video), :class => "small nice white radius button"
+            %td= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete, :class => "small nice red radius button"
+      
+      %br
+      
+      = link_to 'New Video', new_video_path, { :class => "nice blue radius button" }

@@ -2,11 +2,15 @@
   .row
     .alert-box#user-actions
       %dl.sub-nav
-        %dt Things you can do:
+        %dt Things you can manage:
         %dd
-          = link_to "Manage Blog", posts_listing_path
+          = link_to "Blog", posts_listing_path
         %dd
-          = link_to "Manage Events", events_listing_path
+          = link_to "Post Comments", post_comments_listing_path
+        %dd
+          = link_to "Videos", videos_listing_path
+        %dd
+          = link_to "Events", events_listing_path
         %dd
           = link_to "Edit My Account", edit_user_registration_path
         %dd
