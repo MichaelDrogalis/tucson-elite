@@ -2,8 +2,8 @@
   .twelve.columns
     .panel
       %h2#page-title Browse Video Tags
-      #tag-cloud 
-
+      #dynacloud
+      
 - @videos.each do |video|
   .row
     .twelve.columns
@@ -22,3 +22,6 @@
                 = video.description
               .five.columns
  
+.dynacloud#dynatags
+  - Video.tag_counts_on(:tags).each do |tag|
+    = (tag.name + " ") * tag.count

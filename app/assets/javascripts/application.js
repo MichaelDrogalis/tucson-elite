@@ -8,7 +8,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require foundation
-//= require jqcloud
 //= require_tree .
 
 function goToByScroll(id) {

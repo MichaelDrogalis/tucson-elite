@@ -20,7 +20,6 @@ gem 'sass-rails', '3.1.4'
 
 gem 'friendly_id'
 gem 'acts-as-taggable-on', '~> 2.2.2'
-gem 'jqcloud-rails'
 
 gem 'jquery-rails'
 gem 'jquery_datepicker'

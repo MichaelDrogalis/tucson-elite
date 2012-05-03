@@ -3,14 +3,5 @@ $(document).ready(function() {
         itemName: "video",
 	fieldName: "tag_list"
     });
-
-    var tag_array = [
-        <% Video.tag_counts_on(:tags).each do |tag| %>
-            { text: "<%= tag.name %>", weight: <%= tag.count %> },
-        <% end %>
-    ];
-
-    // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
-    $("#tag-cloud").jQCloud(tag_array);
 });
 

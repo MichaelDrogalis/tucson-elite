@@ -60,8 +60,6 @@ GEM
       railties (~> 3.0)
     hike (1.2.1)
     i18n (0.6.0)
-    jqcloud-rails (1.0.0)
-      jquery-rails
     jquery-rails (1.0.19)
       railties (~> 3.0)
       thor (~> 0.14)
@@ -152,7 +150,6 @@ DEPENDENCIES
   friendly_id
   haml
   haml-rails
-  jqcloud-rails
   jquery-rails
   jquery_datepicker
   pg
