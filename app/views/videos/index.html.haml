@@ -11,11 +11,15 @@
         %h3= tag.name
         
         - Video.tagged_with(tag.name).each do |video|
-          .youtube-video
-            %object
-              %param{:name => "movie", :value => "http://www.youtube.com/v/#{video.youtube_url}&hl=en"}
-              %param{:name => "wmode", :value => "transparent"}
-              %embed{:src => "http://www.youtube.com/v/#{video.youtube_url}&hl=en", :id => "youtube-player", :type => "application/x-shockwave-flash", :wmode => "transparent"}
+          .row
+            .four.columns
+              = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
+                = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg"
+            .five.columns
+              .alert-box
+                %h4= video.title
+                %p= video.description
+            .three.columns
         
 .dynacloud#dynatags
   - Video.tag_counts_on(:tags).each do |tag|
