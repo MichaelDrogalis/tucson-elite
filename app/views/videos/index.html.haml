@@ -13,8 +13,11 @@
         - Video.tagged_with(tag.name).each do |video|
           .row
             .four.columns
-              = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
-                = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg"
+              - if not video.youtube_url.empty?
+                = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
+                  = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg"
+              - else
+                = raw video.custom_markup
             .five.columns
               .alert-box
                 %h4= video.title
