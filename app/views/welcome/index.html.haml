@@ -19,6 +19,9 @@
               %h4= truncate(post.title, :length => 80)
               = Sanitize.clean(format(truncate(post.content, :length => 275)))
               = link_to "Full article", post_path(post)
+              .author.small
+                = post.user.full_name + " on " + post.date
+
     .row
       .twelve.columns#more-articles
         = link_to "Read more articles", blog_path, { :class => "big blue nice radius button" }
