@@ -36,6 +36,9 @@
         = link_to "Videos", videos_path, { :class => "nav-link" }
         = link_to "Events", events_path, { :class => "nav-link" }
       .two.columns
+        - if current_page? root_url
+          = link_to "http://www.facebook.com/pages/Tucson-Elite-Athletic-Club/321141644566434?ref=ts" do
+            = image_tag "http://3.bp.blogspot.com/-rZ-TEkkplek/TwxXHLCdRdI/AAAAAAAAGjw/EiBw33dWUSQ/s1600/101919-simple-red-glossy-icon-social-media-logos-facebook-logo-square.png"
 
     #body-content
       = render "layouts/actions"
@@ -47,7 +50,8 @@
       .twelve.columns
         #developer
           .sponsor-logo
-            = image_tag asset_path("pike-logo.png")
-          %p Developed by Michael Drogalis (mjd3089 at rit dot edu) | A Ruby on Rails project 
+            = link_to "http://www.pikeathletics.com" do
+              = image_tag asset_path("pike-logo.png")
+          %p Developed by Michael Drogalis (mjd3089 at rit dot edu)
           = link_to "Coach? Log in here!", new_user_session_path
  
