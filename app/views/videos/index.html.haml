@@ -1,0 +1,31 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Browse Video Tags
+      #dynacloud
+      
+- @video_tags.each do |tag|
+  .row{ :id => tag.name }
+    .twelve.columns
+      .panel
+        %h3= tag.name
+        
+        - Video.tagged_with(tag.name).each do |video|
+          .row
+            .four.columns
+              - if not video.youtube_url.empty?
+                = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
+                  = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg"
+              - else
+                = raw video.custom_markup
+            .five.columns
+              .alert-box
+                %h4= video.title
+                %p= video.description
+            .three.columns
+        
+.dynacloud#dynatags
+  - Video.tag_counts_on(:tags).each do |tag|
+    = (tag.name + " ") * tag.count
+
+#toTop ^ Back to Top

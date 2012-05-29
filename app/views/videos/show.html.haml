@@ -1,0 +1,16 @@
+.row
+  .panel#video-show-container
+    .row
+      .twelve.columns
+        %h2#post-title= @video.title
+    .row
+      .twelve.columns
+        = @video.youtube_url
+    .row
+      .twelve.columns
+        = @video.description
+
+    - if user_signed_in?
+      = link_to 'Edit', edit_video_path(@video)
+      \|
+      = link_to 'Back', videos_path

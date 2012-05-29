@@ -6,6 +6,12 @@
       = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "nice", :method => :put }) do |f|
         = devise_error_messages!
         %div.form-field
+          = f.label :first_name
+          = f.text_field :first_name
+        %div.form-field
+          = f.label :last_name
+          = f.text_field :last_name
+        %div.form-field
           = f.label :email
           = f.email_field :email
         %div.form-field
@@ -21,8 +27,9 @@
           %i (we need your current password to confirm your changes)
           %br/
           = f.password_field :current_password
-        %div= f.submit "Update"
+        %p
+          %div= f.submit "Update", { :class => "nice radius button" }
       %h3 Cancel my account
       %p
-        Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
+        = link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete, :class => "nice red radius button"
       = link_to "Back", :back

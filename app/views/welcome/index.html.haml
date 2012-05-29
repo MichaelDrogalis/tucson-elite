@@ -1,37 +1,21 @@
-.row.homepage-content
+.row
   .six.columns
-    #featured
-      = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/421926_407082032639061_321141644566434_1841310_1782878540_n.jpg"
-      = image_tag asset_path("nationals.png")
-      = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/401978_354758111204787_321141644566434_1680787_1410265771_n.jpg"
-  .six.columns
-    .panel
-      %h4 Upcoming races
-      %ul
-        = link_to "#" do
-          %li Boston marathon, April 16th
-        = link_to "#" do
-          %li Tucson 5k, May 25th
-        = link_to "#" do
-          %li Run for the Cure 5k, June 1st
-    .panel  
-      %h4 Recent articles
-      %ul
-        = link_to "#" do
-          %li Allan's Neat Article Title
-        = link_to "#" do
-          %li Other Article By Katherine
-        = link_to "#" do
-          %li Article By Some Other Guy About Things We Like
+    .row
+      .twelve.columns
+        #featured
+          = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/421926_407082032639061_321141644566434_1841310_1782878540_n.jpg"
+          = image_tag asset_path("nationals.png")
+          = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/401978_354758111204787_321141644566434_1680787_1410265771_n.jpg"
+    .row#social-icons
+      .twelve.columns
+        = image_tag asset_path("usa-tf-member.png")
 
-.row.sponsors-logos#sponsors
   .six.columns
-    .panel.sponsor
-      .sponsor-logo
-        = image_tag "pike-logo.png"
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis augue, id elementum orci. Nunc eget nulla a urna posuere blandit et quis justo. Phasellus venenatis lectus vel lacus auctor feugiat. Nullam fringilla lorem id ante elementum a fringilla felis bibendum. Maecenas eu justo odio, at fringilla turpis. Suspendisse dignissim elit vitae magna molestie ultrices non nec neque. Nam quis egestas mauris. Donec ac egestas nunc. Etiam cursus elit odio. Quisque facilisis massa ultricies quam rutrum sit amet hendrerit odio consectetur. In dictum condimentum placerat. Cras lacinia nisi a turpis pretium eget facilisis justo sagittis. Ut augue turpis, pellentesque ac tempor at, pellentesque nec urna.
-  .six.columns
-    .panel.sponsor
-      .sponsor-logo
-        = image_tag "performance-logo.png"
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis augue, id elementum orci. Nunc eget nulla a urna posuere blandit et quis justo. Phasellus venenatis lectus vel lacus auctor feugiat. Nullam fringilla lorem id ante elementum a fringilla felis bibendum. Maecenas eu justo odio, at fringilla turpis. Suspendisse dignissim elit vitae magna molestie ultrices non nec neque. Nam quis egestas mauris. Donec ac egestas nunc. Etiam cursus elit odio. Quisque facilisis massa ultricies quam rutrum sit amet hendrerit odio consectetur. In dictum condimentum placerat. Cras lacinia nisi a turpis pretium eget facilisis justo sagittis. Ut augue turpis, pellentesque ac tempor at, pellentesque nec urna. 
+    - @posts.each do |post|
+      .row
+        .twelve.columns
+          .panel
+            %h4= truncate(post.title, :length => 80)
+            = Sanitize.clean(format(truncate(post.content, :length => 325)))
+            = link_to "Full article", post_path(post)
+  

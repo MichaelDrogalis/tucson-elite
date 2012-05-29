@@ -28,24 +28,30 @@
         = link_to root_path do
           = image_tag "logo.png"
       .two.columns.nav-links
-        = link_to "Blog", "#", { :class => "nav-link" }
-        = link_to "Videos", "#", { :class => "nav-link" }
-        = link_to "Workouts", "#", { :class => "nav-link" }
-      .two.columns.nav-links
-        = link_to "Mission", "#", { :class => "nav-link" }
+        = link_to "About", "#", { :class => "nav-link" }
         = link_to "Coaches", coaches_path, { :class => "nav-link" }
-        = link_to "Spotlight", "#", { :class => "nav-link" }
+        = link_to "Workouts", workouts_path, { :class => "nav-link" }
       .two.columns.nav-links
-        - if request.env['PATH_INFO'] == root_path
-          = link_to "Show our sponsors some love!", "#", { :class => "medium radius nice button", :id => "sponsor-love", :onclick => "goToByScroll('sponsors')" }
+        = link_to "Blog", blog_path, { :class => "nav-link" }
+        = link_to "Videos", videos_path, { :class => "nav-link" }
+        = link_to "Events", events_path, { :class => "nav-link" }
+      .two.columns#fb-icon
+        - if current_page? root_url
+          = link_to "http://www.facebook.com/pages/Tucson-Elite-Athletic-Club/321141644566434?ref=ts" do
+            = image_tag "http://3.bp.blogspot.com/-rZ-TEkkplek/TwxXHLCdRdI/AAAAAAAAGjw/EiBw33dWUSQ/s1600/101919-simple-red-glossy-icon-social-media-logos-facebook-logo-square.png"
 
-    = render "layouts/actions"
-    = render "layouts/feedback"
+    #body-content
+      = render "layouts/actions"
+      = render "layouts/feedback"
     
-    = yield
-    
-    .row
+      = yield
+              
+    .row 
       .twelve.columns
-        .panel#developer
+        #developer
+          .sponsor-logo
+            = link_to "http://www.pikeathletics.com" do
+              = image_tag asset_path("pike-logo.png")
           %p Developed by Michael Drogalis (mjd3089 at rit dot edu)
-          %p A Ruby on Rails project
+          = link_to "Coach? Log in here!", new_user_session_path
+ 

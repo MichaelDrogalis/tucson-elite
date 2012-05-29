@@ -1,0 +1,43 @@
+.row
+  .panel#post-container
+    .row
+      .twelve.columns
+        %h2#post-title= @post.title
+    .row
+      .twelve.columns
+        = format(@post.content)
+        = tweet_button
+        = facebook_like
+        
+        - if user_signed_in? 
+          = link_to 'Edit', edit_post_path(@post)
+          \|
+          = link_to 'Back', posts_path
+
+.row
+  .twelve.columns
+    .panel
+      .row
+        .six.columns
+          %h4= @n_comments.to_s + " comments"
+          - @post_comments.each do |comment|
+            .alert-box.comments
+              %span.comment-name
+                = comment.name
+              
+              %span.comment-birth
+              = time_ago_in_words(comment.created_at) + " ago"
+              
+              .comment-content
+                = comment.content
+          
+          %hr
+          %h4 Got something to say?
+          = simple_form_for @comment do |f|
+            = f.hidden_field :post_id, :value => @post.id
+            = f.input :name
+            = f.input :email
+            = f.input :content
+            = f.button :submit, { :class => "nice green radius", :value => "Post Comment" }
+
+#toTop ^ Back to Top
