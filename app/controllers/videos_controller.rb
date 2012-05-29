@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    @video_tags = Video.tag_counts_on(:tags)
 
     respond_to do |format|
       format.html # index.html.erb

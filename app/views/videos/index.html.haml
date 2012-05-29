@@ -1,23 +1,31 @@
 .row
   .twelve.columns
     .panel
-      %h2#page-title Videos
-
-- @videos.each do |video|
-  .row
+      %h2#page-title Browse Video Tags
+      #dynacloud
+      
+- @video_tags.each do |tag|
+  .row{ :id => tag.name }
     .twelve.columns
       .panel
-        .row
-          .twelve.columns
-            %h4= video.title
-            .row
-              .four.columns
-                .youtube-video
-                  %object
-                    %param{:name => "movie", :value => "http://www.youtube.com/v/#{video.youtube_url}&hl=en"}
-                    %param{:name => "wmode", :value => "transparent"}
-                    %embed{:src => "http://www.youtube.com/v/#{video.youtube_url}&hl=en", :id => "youtube-player", :type => "application/x-shockwave-flash", :wmode => "transparent"}
-              .three.columns
-                = video.description
-              .five.columns
- 
+        %h3= tag.name
+        
+        - Video.tagged_with(tag.name).each do |video|
+          .row
+            .four.columns
+              - if not video.youtube_url.empty?
+                = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
+                  = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg"
+              - else
+                = raw video.custom_markup
+            .five.columns
+              .alert-box
+                %h4= video.title
+                %p= video.description
+            .three.columns
+        
+.dynacloud#dynatags
+  - Video.tag_counts_on(:tags).each do |tag|
+    = (tag.name + " ") * tag.count
+
+#toTop ^ Back to Top
