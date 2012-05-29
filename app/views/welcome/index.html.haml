@@ -11,11 +11,14 @@
         = image_tag asset_path("usa-tf-member.png")
 
   .six.columns
-    - @posts.each do |post|
-      .row
-        .twelve.columns
-          .panel
-            %h4= truncate(post.title, :length => 80)
-            = Sanitize.clean(format(truncate(post.content, :length => 325)))
-            = link_to "Full article", post_path(post)
-  
+    .row
+      - @posts.each do |post|
+        .row
+          .twelve.columns
+            .panel
+              %h4= truncate(post.title, :length => 80)
+              = Sanitize.clean(format(truncate(post.content, :length => 325)))
+              = link_to "Full article", post_path(post)
+    .row
+      .twelve.columns#more-articles
+        = link_to "Read more articles", blog_path, { :class => "big blue nice radius button" }
