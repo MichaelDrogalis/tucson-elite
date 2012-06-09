@@ -3,6 +3,7 @@
     .row
       .twelve.columns
         %h2#post-title= @post.title
+        %p= @post.user.full_name + " on " + @post.date.to_s
     .row
       .twelve.columns
         = format(@post.content)
