@@ -32,4 +32,10 @@ $(document).ready(function() {
     $('#toTop').click(function() {
 	$('body,html').animate({scrollTop:0},800);
     });
+
+    $(".post-tag-input").tagit({
+        itemName: "post",
+	fieldName: "tag_list"
+    });
 });
+
