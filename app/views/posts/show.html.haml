@@ -3,7 +3,13 @@
     .row
       .twelve.columns
         %h2#post-title= @post.title
-        %p= @post.user.full_name + " on " + @post.date.to_s
+    .row.blog-post-meta-data
+      .twelve.columns
+        .blog-author= "By " + @post.user.full_name + " on " + @post.date.to_s + " | "
+        .blog-post-tags
+          %ul
+            - @post.tag_list.each do |tag|
+              %li.post-tag= "#" + tag
     .row
       .twelve.columns
         = format(@post.content)
