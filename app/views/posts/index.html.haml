@@ -10,7 +10,8 @@
       .panel
         %h4= post.title
         .small
-          = "by " + post.user.full_name + " on " + post.date
+          = "by " + post.user.full_name + " on " + post.date + " | "
+          = "#" + post.tag_list.join(", #")
         = truncate(post.content, :length => 400)
         .full-article
           = link_to "Full article", post_path(post)
