@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.sort_by { |post| post.created_at }.reverse
-    @tags = Post.tag_counts.map do |pair| pair.name end
+    @tags = Post.tag_counts.map { |pair| pair.name }.sort
 
     respond_to do |format|
       format.html # index.html.erb

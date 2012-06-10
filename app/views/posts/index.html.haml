@@ -15,4 +15,4 @@
             %ul
               - @tags.each do |tag|
                 %li
-                  = link_to ("#" + tag), "/"
+                  = link_to ("#" + tag), post_tags_path(tag)
