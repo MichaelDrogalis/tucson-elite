@@ -1,18 +1,28 @@
 .row
-  .twelve.columns
-    .panel
-      %h2#page-title All Blog Posts
+  .eight.columns
+    .row
+      .twelve.columns
+        .panel
+          %h2#page-title Blog Posts by Date
+    - @posts.each do |post|
+      .row
+        .twelve.columns
+          .panel
+            %h4= post.title
+            .small
+              = "by " + post.user.full_name + " on " + post.date + " | "
+              = "#" + post.tag_list.join(", #")
+            = truncate(post.content, :length => 400)
+            .full-article
+              = link_to "Full article", post_path(post)
+    
+  .four.columns
+    .row
+      .twelve.columns
+        .panel
+          %h2#page-title#tag-title Tags
+          #dynacloud.blog-post-tag-listing
 
-
-- @posts.each do |post|
-  .row
-    .twelve.columns
-      .panel
-        %h4= post.title
-        .small
-          = "by " + post.user.full_name + " on " + post.date + " | "
-          = "#" + post.tag_list.join(", #")
-        = truncate(post.content, :length => 400)
-        .full-article
-          = link_to "Full article", post_path(post)
-      
+.dynacloud#dynatags
+  - Post.tag_counts_on(:tags).each do |tag|
+    = (tag.name + " ") * tag.count
