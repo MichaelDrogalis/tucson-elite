@@ -5,17 +5,7 @@
         .panel
           %h2#page-title Blog Posts by Date
     - @posts.each do |post|
-      .row
-        .twelve.columns
-          .panel
-            %h4= post.title
-            .small
-              = "by " + post.user.full_name + " on " + post.date + " | "
-              = "#" + post.tag_list.join(", #")
-            = truncate(post.content, :length => 400)
-            .full-article
-              = link_to "Full article", post_path(post)
-    
+      = render :partial => "posts/post_preview", :locals => { :post => post }
   .four.columns
     .row
       .twelve.columns

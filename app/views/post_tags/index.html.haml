@@ -1,0 +1,10 @@
+.row
+  .panel
+    .row
+      .twelve.columns
+        %h2#page-title= "Blog posts with tag #" + @tag
+.row
+  .twelve.columns
+    - @posts.each do |post|
+      = render :partial => "posts/post_preview", :locals => { :post => post }      
+ 
