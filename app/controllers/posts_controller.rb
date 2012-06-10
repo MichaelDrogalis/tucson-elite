@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.sort_by { |post| post.created_at }.reverse
+    @posts = reverse_creation Post
     @tags = tags_for Post
 
     respond_to do |format|
