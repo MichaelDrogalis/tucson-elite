@@ -1,0 +1,16 @@
+.row
+  .twelve.columns
+    .panel
+      %h4= video.title
+      - if not video.youtube_url.empty?
+        = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
+          .youtube-wrapper
+            = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg", { :class => "youtube-preview" }
+            = image_tag asset_path("play-button.png"), { :class => "play-button" }
+      - else
+        = raw video.custom_markup
+      .small
+        = video.date
+        - video.sorted_tags.each do |tag|
+          = link_to ("#" + tag), video_tags_path(tag)
+        %div= video.description  

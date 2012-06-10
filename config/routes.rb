@@ -13,6 +13,7 @@ TucsonElite::Application.routes.draw do
   get "/blog" => "posts#index", :as => :blog
 
   get "/post_tags/:tag" => "post_tags#index", :as => :post_tags
+  get "/video_tags/:tag" => "video_tags#index", :as => :video_tags
   
   get "/events_admin" => "events#listing", :as => :events_listing
   get "/posts_admin" => "posts#listing", :as => :posts_listing
