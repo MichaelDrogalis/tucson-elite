@@ -4,7 +4,8 @@
       %h4= post.title
       .small
         = "by " + post.user.full_name + " on " + post.date + " | "
-        = "#" + post.tag_list.sort.join(", #")
+        - post.sorted_tags.each do |tag|
+          = link_to ("#" + tag), post_tags_path(tag)
       = truncate(post.content, :length => 400)
       .full-article
         = link_to "Full article", post_path(post)

@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
   def date
     created_at.strftime("%m/%d/%Y")
   end
+
+  def sorted_tags
+    tag_list.sort
+  end
 end
