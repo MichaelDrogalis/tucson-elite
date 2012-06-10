@@ -1,0 +1,13 @@
+.row
+  .twelve.columns
+    .panel
+      %h4= video.title
+      - if not video.youtube_url.empty?
+        = link_to "http://www.youtube.com/watch?v=#{video.youtube_url}" do
+          = image_tag "http://img.youtube.com/vi/#{video.youtube_url}/0.jpg"
+      - else
+        = raw video.custom_markup
+      .small
+        = video.date
+        - video.sorted_tags.each do |tag|
+          = link_to ("#" + tag), post_tags_path(tag)

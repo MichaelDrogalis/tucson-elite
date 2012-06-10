@@ -3,9 +3,9 @@
     .row
       .twelve.columns
         .panel
-          %h2#page-title Videos by Date
-      - @videos.each do |video|
-        = render :partial => "videos/video_snippet", :locals => { :video => video }
+          %h2#page-title= "Videos with tag #" + @tag
+    - @videos.each do |video|
+      = render :partial => "videos/video_snippet", :locals => { :video => video }
   .four.columns
     = render :partial => "videos/tag_list", :locals => { :tags => @tags }
 
