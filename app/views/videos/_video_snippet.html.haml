@@ -10,4 +10,5 @@
       .small
         = video.date
         - video.sorted_tags.each do |tag|
-          = link_to ("#" + tag), post_tags_path(tag)
+          = link_to ("#" + tag), video_tags_path(tag)
+        %div= video.description  
