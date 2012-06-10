@@ -3,7 +3,7 @@
     .panel
       %h4= post.title
       .small
-        = "by " + post.user.full_name + " on " + post.date + " | "
+        = "by " + post.user.full_name + " on " + post.date
         - post.sorted_tags.each do |tag|
           = link_to ("#" + tag), post_tags_path(tag)
       = truncate(post.content, :length => 400)

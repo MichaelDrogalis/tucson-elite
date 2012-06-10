@@ -1,10 +1,10 @@
 .row
-  .panel
+  .eight.columns
     .row
       .twelve.columns
-        %h2#page-title= "Blog posts with tag #" + @tag
-.row
-  .twelve.columns
+        .panel
+          %h2#page-title= "Blog posts with tag #" + @tag
     - @posts.each do |post|
-      = render :partial => "posts/post_preview", :locals => { :post => post }      
- 
+      = render :partial => "posts/post_preview", :locals => { :post => post }
+  .four.columns
+    = render "posts/tag_list"

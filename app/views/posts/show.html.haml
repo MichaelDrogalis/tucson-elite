@@ -5,7 +5,7 @@
         %h2#post-title= @post.title
     .row.blog-post-meta-data
       .twelve.columns
-        .blog-author= "By " + @post.user.full_name + " on " + @post.date.to_s + " | "
+        .blog-author= "By " + @post.user.full_name + " on " + @post.date.to_s
         = render "posts/post_tags", { :locals => { :post => @post } }
     .row
       .twelve.columns

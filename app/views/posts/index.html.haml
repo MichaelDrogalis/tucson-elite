@@ -7,12 +7,4 @@
     - @posts.each do |post|
       = render :partial => "posts/post_preview", :locals => { :post => post }
   .four.columns
-    .row
-      .twelve.columns
-        .panel
-          %h2#page-title#tag-title Tags
-          .blog-post-tag-listing
-            %ul
-              - @tags.each do |tag|
-                %li
-                  = link_to ("#" + tag), post_tags_path(tag)
+    = render "posts/tag_list"
