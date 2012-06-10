@@ -1,0 +1,4 @@
+.blog-post-tags
+  %ul
+    - @post.tag_list.each do |tag|
+      %li.post-tag= "#" + tag

@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.sort_by { |post| post.created_at }.reverse
+    @tags = tags_for Post
 
     respond_to do |format|
       format.html # index.html.erb
