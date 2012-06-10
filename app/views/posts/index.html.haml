@@ -21,8 +21,8 @@
       .twelve.columns
         .panel
           %h2#page-title#tag-title Tags
-          #dynacloud.blog-post-tag-listing
-
-.dynacloud#dynatags
-  - Post.tag_counts_on(:tags).each do |tag|
-    = (tag.name + " ") * tag.count
+          .blog-post-tag-listing
+            %ul
+              - @tags.each do |tag|
+                %li
+                  = link_to ("#" + tag), "/"
