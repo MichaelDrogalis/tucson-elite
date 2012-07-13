@@ -8,7 +8,7 @@ TucsonElite::Application.routes.draw do
 
   get "/welcome/index"
   get "/about" => "about#index", :as => :about
-  get "/coaches" => "coaches#index", :as => :coaches
+  get "/founders" => "founders#index", :as => :founders
   get "/workouts" => "workouts#index", :as => :workouts
   get "/blog" => "posts#index", :as => :blog
 
