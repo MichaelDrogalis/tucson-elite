@@ -1,0 +1,9 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title#tag-title Tags
+      .blog-post-tag-listing
+        %ul
+          - @tags.each do |tag|
+            %li
+              = link_to ("#" + tag), post_tags_path(tag)
