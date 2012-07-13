@@ -7,7 +7,7 @@ TucsonElite::Application.routes.draw do
   resources :videos
 
   get "/welcome/index"
-  get "/coaches" => "coaches#index", :as => :coaches
+  get "/founders" => "founders#index", :as => :founders
   get "/workouts" => "workouts#index", :as => :workouts
 
   get "/events_admin" => "events#listing", :as => :events_listing
