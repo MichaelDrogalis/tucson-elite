@@ -1,0 +1,35 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Tips by Date
+.row
+  .twelve.columns
+    .row
+      - @tips.each_slice(3) do |tip_1, tip_2, tip_3|
+        .four.columns
+          .panel
+            %h4= tip_1.title
+            %p
+              = truncate(tip_1.content, :length => 200)
+              = link_to "Tip link", tip_path(tip_1)
+        - if not tip_2.nil?          
+          .four.columns
+            .panel
+              %h4= tip_2.title
+              %p
+                = truncate(tip_2.content, :length => 200)
+                = link_to "Tip link", tip_path(tip_2)
+        - else
+          .eight.columns
+        - if not tip_3.nil?          
+          .four.columns
+            .panel
+              %h4= tip_3.title
+              %p
+                = truncate(tip_3.content, :length => 200)
+                = link_to "Tip link", tip_path(tip_3)
+        - else
+          .four.columns
+
+#toTop ^ Back to Top
+
