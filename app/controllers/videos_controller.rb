@@ -4,7 +4,8 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @video_tags = Video.tag_counts_on(:tags)
+    @videos = reverse_creation Video
+    @tags = tags_for Video
 
     respond_to do |format|
       format.html # index.html.erb
