@@ -1,0 +1,23 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title Listing All Tips Posts
+  .twelve.columns
+    .panel
+      %table
+        %tr
+          %th Title
+          %th Content
+          %th
+          %th
+      
+        - @tips.each do |tip|
+          %tr
+            %td= tip.title
+            %td= truncate(tip.content)
+            %td= link_to 'Edit', edit_tip_path(tip), :class => "small nice white radius button"
+            %td= link_to 'Destroy', tip, :confirm => 'Are you sure?', :method => :delete, :class => "small nice red radius button"
+      
+      %br
+      
+      = link_to 'New Tip', new_tip_path, { :class => "nice blue radius button" }
