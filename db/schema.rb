@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717003114) do
+ActiveRecord::Schema.define(:version => 20120717005229) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20120717003114) do
     t.datetime "updated_at"
     t.string   "slug"
     t.text     "content"
+    t.integer  "user_id"
   end
 
   add_index "tips", ["slug"], :name => "index_tips_on_slug", :unique => true

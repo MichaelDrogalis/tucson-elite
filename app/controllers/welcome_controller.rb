@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @posts = Post.all.sort_by { |post| post.created_at }.reverse.take(3)
+    @posts = (Post.all.concat Tip.all).sort_by { |entry| entry.created_at }.reverse.take(3)
   end
 end
