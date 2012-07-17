@@ -4,8 +4,8 @@
       %h2#page-title Tips by Date
 .row
   .twelve.columns
-    .row
-      - @tips.each_slice(3) do |tip_1, tip_2, tip_3|
+    - @tips.each_slice(3) do |tip_1, tip_2, tip_3|
+      .row
         .four.columns
           .panel
             %h4= tip_1.title
