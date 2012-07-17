@@ -1,0 +1,9 @@
+.row
+  .twelve.columns
+    .panel
+      %h2#page-title#tag-title Tags
+      .video-tag-listing
+        %ul
+          - tags.each do |tag|
+            %li
+              = link_to ("#" + tag), video_tags_path(tag)

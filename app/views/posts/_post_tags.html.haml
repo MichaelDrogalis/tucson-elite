@@ -1,0 +1,5 @@
+.blog-post-tags.small
+  %ul
+    - @post.tag_list.each do |tag|
+      %li.post-tag
+        = link_to ("#" + tag), post_tags_path(tag)

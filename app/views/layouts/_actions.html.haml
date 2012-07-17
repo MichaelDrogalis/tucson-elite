@@ -6,12 +6,12 @@
         %dd
           = link_to "Blog", posts_listing_path
         %dd
+          = link_to "Tips", tips_listing_path
+        %dd
           = link_to "Post Comments", post_comments_listing_path
         %dd
           = link_to "Videos", videos_listing_path
         %dd
           = link_to "Events", events_listing_path
-        %dd
-          = link_to "Edit My Account", edit_user_registration_path
         %dd
           = link_to "Sign out", destroy_user_session_path, :method => :delete

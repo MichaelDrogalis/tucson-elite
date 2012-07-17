@@ -160,7 +160,7 @@ jQuery.fn.dynaCloud = function(outElement) {
 
   for (var i = 0; i < l; ++i) {
       var scrollId = "'" + cl[i].el + "'"
-      out.append('<a onclick="goToByScroll(' + scrollId + ');" href="#' + cl[i].el + '" style="font-size: ' + Math.ceil((cl[i].count / max) * jQuery.dynaCloud.scale) + 'em"><span>' + cl[i].el + '</span></a> &nbsp; ');
+      out.append('<a onclick="goToByScroll(' + scrollId + ');" href="#' + cl[i].el + '" style="font-size: ' + Math.ceil((cl[i].count / max) * jQuery.dynaCloud.scale) + 'em"><span>#' + cl[i].el + '</span></a> &nbsp; ');
   }
   
   var target = this;

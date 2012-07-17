@@ -3,7 +3,7 @@
     .row
       .twelve.columns
         .panel
-          %h2#page-title Blog Posts by Date
+          %h2#page-title= "Blog posts with tag #" + @tag
     - @posts.each do |post|
       = render :partial => "posts/post_preview", :locals => { :post => post }
   .four.columns

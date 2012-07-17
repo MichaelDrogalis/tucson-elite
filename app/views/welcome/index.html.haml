@@ -6,16 +6,22 @@
           = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/421926_407082032639061_321141644566434_1841310_1782878540_n.jpg"
           = image_tag asset_path("nationals.png")
           = image_tag "http://sphotos.xx.fbcdn.net/hphotos-ash4/401978_354758111204787_321141644566434_1680787_1410265771_n.jpg"
-    .row#social-icons
-      .twelve.columns
+    .row
+      .twelve.columns#usa-tf-logo
         = image_tag asset_path("usa-tf-member.png")
 
   .six.columns
-    - @posts.each do |post|
-      .row
-        .twelve.columns
-          .panel
-            %h4= truncate(post.title, :length => 80)
-            = Sanitize.clean(format(truncate(post.content, :length => 325)))
-            = link_to "Full article", post_path(post)
-  
+    .row
+      - @posts.each do |post|
+        .row
+          .twelve.columns
+            .panel
+              %h4= truncate(post.title, :length => 80)
+              = Sanitize.clean(format(truncate(post.content, :length => 275)))
+              - if post.class == Post
+                = link_to "Full post", post_path(post)
+              - else
+                = link_to "Full post", tip_path(post)
+              .author.small
+                = post.user.full_name + " on " + post.date
+
