@@ -4,21 +4,23 @@
       %h2#page-title Tips by Date
 .row
   .twelve.columns
-    .row
-      - @tips.each_slice(3) do |tip_1, tip_2, tip_3|
+    - @tips.each_slice(3) do |tip_1, tip_2, tip_3|
+      .row
         .four.columns
           .panel
             %h4= tip_1.title
             %p
-              = truncate(tip_1.content, :length => 200)
+              = truncate(tip_1.content, :length => 225)
               = link_to "Tip link", tip_path(tip_1)
+              .small= "Posted on " + tip_1.date
         - if not tip_2.nil?          
           .four.columns
             .panel
               %h4= tip_2.title
               %p
-                = truncate(tip_2.content, :length => 200)
+                = truncate(tip_2.content, :length => 225)
                 = link_to "Tip link", tip_path(tip_2)
+                .small= "Posted on " + tip_2.date
         - else
           .eight.columns
         - if not tip_3.nil?          
@@ -26,8 +28,9 @@
             .panel
               %h4= tip_3.title
               %p
-                = truncate(tip_3.content, :length => 200)
+                = truncate(tip_3.content, :length => 225)
                 = link_to "Tip link", tip_path(tip_3)
+                .small= "Posted on " + tip_3.date
         - else
           .four.columns
 

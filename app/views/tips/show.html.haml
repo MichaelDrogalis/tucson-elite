@@ -3,5 +3,10 @@
   .six.columns.panel
     %h2#post-title= @tip.title
     %p= @tip.content
+    %p.small= @tip.user.full_name + " on " + @tip.date
+    = tweet_button
+    = facebook_like
+
+
   .three.columns
 
