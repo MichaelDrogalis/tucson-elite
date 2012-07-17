@@ -9,10 +9,9 @@
         .twelve.columns
           .panel
             %h4= tip.title
-            %p
-              = truncate(tip.content, :length => 400)
-              = link_to "Tip link", tip_path(tip)
-              .small= "Posted on " + tip.date
+            = truncate(tip.content, :length => 400)
+            = link_to "Tip link", tip_path(tip)
+            .small= "Posted on " + tip.date
 
 #toTop ^ Back to Top
 
