@@ -3,5 +3,6 @@
   .six.columns.panel
     %h2#post-title= @tip.title
     %p= @tip.content
+    %p.small= @tip.created_at.strftime("%B %d, %Y")
   .three.columns
 
